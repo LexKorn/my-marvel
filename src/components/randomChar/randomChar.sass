@@ -1,18 +1,15 @@
 @import '../../style/variables.sass'
 
 .randomchar
-    display: flex
-    margin: 0
-    padding: 0
-    justify-content: space-between
+    display: grid
+    grid-template-columns: repeat(2, 50%)
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25)
 
     &__block
-        display: flex
-        width: 50%
-        height: 200px
-        position: relative
+        display: grid
+        grid-template-columns: 180px auto
+        column-gap: 35px
         padding: 40px 35px
-        border: 1px solid red
 
     &__img
         width: 180px
@@ -20,6 +17,9 @@
         object-fit: cover
 
     &__info
+        display: grid
+        grid-template-rows: minmax(29px, auto) 90px 38px
+        row-gap: 10px
         padding-top: 3px
 
     &__name
@@ -32,10 +32,30 @@
         font-size: 14px
         line-height: 18px
 
+    &__btns
+        a:nth-child(1)
+            margin-right: 30px
 
-    &__static
-        width: 50%
-        height: 200px
+
+    &__static        
         position: relative
         padding: 40px 35px
-        border: 3px dashed blue
+        background-color: $dark
+
+        button
+            margin-top: 13px
+
+    &__title
+        font-weight: bold
+        font-size: 24px
+        line-height: 32px
+        letter-spacing: -0.045em
+        color: #FFFFFF
+
+        &:nth-child(2)
+            margin-top: 33px
+
+    &__decoration
+        position: absolute
+        bottom: 14px
+        right: -37px

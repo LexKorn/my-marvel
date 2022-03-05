@@ -35,7 +35,7 @@ const RandomChar = () => {
                 <button className="button button__main">
                     <div className="inner">Try it</div>
                 </button>
-                <img scr={mjolnir} alt="mjolnir"
+                <img src={mjolnir} alt="mjolnir"
                 className="randomchar__decoration" />           
             </div>
         </div>
