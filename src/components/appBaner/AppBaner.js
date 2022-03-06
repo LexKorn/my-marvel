@@ -1,14 +1,16 @@
 import './appBaner.sass';
+import avengers from '../../resources/img/Avengers.png';
+import avengersLogo from '../../resources/img/Avengers_logo.png';
 
 const AppBaner = () => {
     return (
-        <div className="baner">
-            <div className="random-char">
-
+        <div className="app__baner">
+            <img src={avengers} alt="Avengers" />
+            <div className="app__baner-text">
+                New comics every week!  <br/>
+                Stay tuned!  
             </div>
-            <div className="cta-block">
-
-            </div>
+            <img src={avengersLogo} alt="Avengers Logo" />
         </div>
     )
 }
