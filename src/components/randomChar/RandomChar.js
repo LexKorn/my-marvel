@@ -1,4 +1,5 @@
 import { Component } from 'react';
+
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import MarvelService from '../../services/MarvelService';
@@ -109,10 +110,10 @@ const View = ({char}) => {
                 <p className="randomchar__name">{name}</p>
                 <p className="randomchar__descr">{description}</p>                
                 <div className="randomchar__btns">
-                    <a href={homepage} className="button button__main">
+                    <a href={homepage} className="button button__main" target="_blank">
                         <div className="inner">homepage</div>
                     </a>
-                    <a href={wiki} className="button button__secondary">
+                    <a href={wiki} className="button button__secondary" target="_blank">
                         <div className="inner">Wiki</div>
                     </a>
                 </div>

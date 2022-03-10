@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import MarvelService from '../../services/MarvelService';
 import ErrorMessage from '../errorMessage/ErrorMessage';
@@ -86,40 +87,51 @@ class CharInfo extends Component {
 
 const View = ({char}) => {
     const {name, description, thumbnail, homepage, wiki, comics} = char;
-
-    const clazz = (thumbnail === 'image_not_available.jpg') ? {objectFit: 'contain'} : {objectFit: 'cover'};
+    const imgStyle = (thumbnail === 'image_not_available.jpg') ? {objectFit: 'contain'} : {objectFit: 'cover'};
+    const comicsIs = (comics.length === 0) ? 'There is no comics for this character.' : null;
 
     return (
         <>
             <div className="char__basics">
-                <img src={thumbnail} alt={name} className={`${clazz}`} />
+                <img src={thumbnail} alt={name} style={{imgStyle}} />
                 <div>
                     <div className="char__info-name">{name}</div>
                     <div className="char__btns">
-                        <a href={homepage} className="button button__main">
+                        <a href={homepage} className="button button__main" target="_blank">
                             <div className="inner">homepage</div>
                         </a> 
-                        <a href={wiki} className="button button__secondary">
+                        <a href={wiki} className="button button__secondary" target="_blank">
                             <div className="inner">Wiki</div>
                         </a>
                     </div>                    
                 </div>
             </div>
             <div className="char__descr">{description}</div>
-            <div className="char__comics">Comics:</div>
+            <div className="char__comics">Comics:  <br/>
+                <span style={{fontWeight: 'normal', fontSize: 14}}>
+                    {comicsIs}
+                </span>
+            </div>
             <ul className="char__comics-list">
                 {
                     comics.map((item, i) => {
-                        return (
-                            <li key={i} className="char__comics-item">
-                                {item.name}
-                            </li> 
-                        )
+                        while (i < 10) {
+                            return (
+                                <li key={i} className="char__comics-item">
+                                    {item.name}
+                                </li> 
+                            )
+                        }                       
                     })
                 }                              
             </ul>
         </>
     )
 }
+
+CharInfo.propTypes = {
+    charId: PropTypes.number
+}
+
 
 export default CharInfo;
