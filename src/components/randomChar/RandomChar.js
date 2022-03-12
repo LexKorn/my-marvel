@@ -99,7 +99,7 @@ class RandomChar extends Component {
 
 const View = ({char}) => {
     const {name, description, thumbnail, homepage, wiki} = char;
-    const clazz = (thumbnail === 'image_not_available.jpg') ? {objectFit: 'contain'} : {objectFit: 'cover'};
+    const clazz = (thumbnail === 'image_not_available.jpg') ? {'objectFit': 'contain'} : {'objectFit': 'cover'};
 
     return (
         <div className="randomchar__block">

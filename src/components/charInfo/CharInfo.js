@@ -87,7 +87,7 @@ class CharInfo extends Component {
 
 const View = ({char}) => {
     const {name, description, thumbnail, homepage, wiki, comics} = char;
-    const imgStyle = (thumbnail === 'image_not_available.jpg') ? {objectFit: 'contain'} : {objectFit: 'cover'};
+    const imgStyle = (thumbnail === 'image_not_available.jpg') ? {'objectFit': 'contain'} : {'objectFit': 'cover'};
     const comicsIs = (comics.length === 0) ? 'There is no comics for this character.' : null;
 
     return (
