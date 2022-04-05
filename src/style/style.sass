@@ -1,5 +1,6 @@
 @import './variables'
 @import './button'
+@import './media'
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap')
 
 *
@@ -41,7 +42,8 @@ input::-webkit-inner-spin-button
     margin: 0 
 
 .app
-    width: 1100px
+    // width: 1100px
+    width: 90%
     margin: 0 auto
     padding: 50px 0 50px 0
     position: relative
@@ -70,3 +72,8 @@ main
     
     100% 
         opacity: 1    
+
+
+@media (max-width: 576px)
+    .app
+        padding: 25px 0
