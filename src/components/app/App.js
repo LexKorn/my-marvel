@@ -31,14 +31,14 @@ class App extends Component {
             <RandomChar />
           </ErrorBoundary>        
           <div className="char__content">
-            {/* <ErrorBoundary>
+            <ErrorBoundary>
               <CharList onCharSelected={this.onCharSelected}/>
-            </ErrorBoundary>            */}
-            {/* <ErrorBoundary>
+            </ErrorBoundary>           
+            <ErrorBoundary>
               <CharInfo charId={this.state.selectedChar} />
-            </ErrorBoundary>            */}
+            </ErrorBoundary>           
           </div>
-          {/* <img className="bg-decoration" src={decoration} alt="vision"/> */}
+          <img className="bg-decoration" src={decoration} alt="vision"/>
         </main>      
       </div>
     );
